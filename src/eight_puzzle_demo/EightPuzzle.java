@@ -1,4 +1,7 @@
-package puzzle;
+package eight_puzzle_demo;
+
+import puzzle.Action;
+import puzzle.Puzzle;
 
 import java.util.*;
 

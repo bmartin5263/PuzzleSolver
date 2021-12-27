@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.function.BiFunction;
 
 /**
- * PuzzleSolver is a general purpose agent function (that the right word?) that can be used to solve objects
+ * PuzzleSolver is a general purpose single-agent puzzle solver that can be used to solve objects
  * that implement "Puzzle". PuzzleSolver takes in an initial state, a goal state, a successor function, and a
  * queue. The successor function will determine the path costs and children for a given state while the
  * queue will keep track of search ordering.
@@ -22,7 +22,7 @@ public class PuzzleSolver<T extends Puzzle<T>> {
     private T goalState;                                // Where we finish
     private QueueingMechanism<T> queue;                 // How we determine which node is next
     private BiFunction<T, T, Integer> heuristic;        // Puzzle method to get a heuristic score
-    private HashSet<Puzzle<T>> visited;                 // Keep Track of Expanded Nodes
+    private HashSet<T> visited;                         // Keep Track of Expanded Nodes
 
     /**
      * Only Constructor, initialize all relevant data
@@ -74,16 +74,10 @@ public class PuzzleSolver<T extends Puzzle<T>> {
         // Add in the initial node to the queue
         queue.addOrUpdate(new Node<>(initialState, heuristic.apply(initialState, goalState)));
 
-        Node<T> current;
-        T state;
         while (queue.size() > 0) {
             // Remove the current node (removal algorithm is determined by the QueueingMechanism provided)
-            current = queue.remove();
-
-            // Retrieve the Puzzle State
-            state = current.getState();
-
-            // Check if the node was already expanded
+            Node<T> current = queue.remove();
+            T state = current.getState();
 
             if (state.equals(goalState)) {
                 // We found the goal! Compile the solution information
@@ -101,13 +95,12 @@ public class PuzzleSolver<T extends Puzzle<T>> {
                     // Add the child node (addOrUpdate algorithm is determined by the provided QueueingMechanism)
                     if (!visited.contains(child.getState())) {
                         queue.addOrUpdate(child);
-                    } else {
-                        //System.out.println("I've been here");
                     }
                 }
             }
-
         }
+
+        // No solution found
         return null;
     }
 
@@ -126,12 +119,14 @@ public class PuzzleSolver<T extends Puzzle<T>> {
 
         for (Action action : currentState.getActions()) {
             T nextState = currentState.doAction(action);
-            nodeList.add(new Node<>(parent,
-                                    nextState,
-                                    action,
-                             parent.getDepth() + 1,
-                           parent.getPathCost() + nextState.getCostOfLastMove(),
-                                    heuristic.apply(nextState, goalState)));
+            nodeList.add(new Node<>(
+                    parent,
+                    nextState,
+                    action,
+             parent.getDepth() + 1,
+           parent.getPathCost() + nextState.getCostOfLastMove(),
+                    heuristic.apply(nextState, goalState))
+            );
         }
 
         return nodeList;

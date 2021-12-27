@@ -24,4 +24,9 @@ public interface Puzzle<T extends Puzzle<T>> {
      */
     int getCostOfLastMove();
 
+    /*
+     * Must also define a custom hashCode & equals for your puzzle
+     */
+    int hashCode();
+    boolean equals(Object obj);
 }

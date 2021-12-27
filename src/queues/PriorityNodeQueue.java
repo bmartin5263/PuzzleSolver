@@ -5,6 +5,7 @@ import solver.Node;
 
 import java.util.Comparator;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.PriorityQueue;
 import java.util.function.Predicate;
 
@@ -60,7 +61,7 @@ public class PriorityNodeQueue<T extends Puzzle> implements QueueingMechanism<T>
     @Override
     public Node<T> remove() {
         Node<T> polled = priorityQueue.poll();
-        states.remove(polled.getState());
+        states.remove(Objects.requireNonNull(polled).getState());
         pops++;
         return polled;
     }

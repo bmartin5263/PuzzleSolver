@@ -1,7 +1,5 @@
 package eight_puzzle_demo;
 
-import puzzle.EightPuzzle;
-
 public class Constants {
 
     public static final EightPuzzle GOAL;

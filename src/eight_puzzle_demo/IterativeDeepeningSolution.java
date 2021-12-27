@@ -1,6 +1,5 @@
 package eight_puzzle_demo;
 
-import puzzle.EightPuzzle;
 import queues.DFSStack;
 import solver.PuzzleSolver;
 import solver.Solution;

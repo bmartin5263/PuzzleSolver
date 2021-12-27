@@ -1,6 +1,5 @@
 package eight_puzzle_demo;
 
-import puzzle.EightPuzzle;
 import queues.CompareByPathAndHeuristic;
 import queues.PriorityNodeQueue;
 import solver.PuzzleSolver;

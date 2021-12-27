@@ -1,6 +1,5 @@
 package eight_puzzle_demo;
 
-import puzzle.EightPuzzle;
 import queues.BFSQueue;
 import solver.PuzzleSolver;
 import solver.Solution;

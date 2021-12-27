@@ -10,7 +10,6 @@ public class Main {
         BestFirstSolution.run();
         AStar1Solution.run();
         AStar2Solution.run();
-
     }
 
 }

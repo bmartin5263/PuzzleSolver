@@ -1,4 +1,4 @@
-package eight_puzzle_demo;
+package puzzle.eight_puzzle;
 
 import puzzle.Action;
 import puzzle.Puzzle;

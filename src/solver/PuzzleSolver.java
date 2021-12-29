@@ -81,7 +81,7 @@ public class PuzzleSolver<T extends Puzzle<T>> {
 
             if (state.equals(goalState)) {
                 // We found the goal! Compile the solution information
-                return new Solution<T>(current.getDepth(), compileActionList(current), queue.getMaxSize(), current.getPathCost(), queue.getNumberOfPops());
+                return new Solution(current.getDepth(), compileActionList(current), queue.getMaxSize(), current.getPathCost(), queue.getNumberOfPops());
             }
 
             // Mark State as Visited
@@ -95,6 +95,9 @@ public class PuzzleSolver<T extends Puzzle<T>> {
                     // Add the child node (addOrUpdate algorithm is determined by the provided QueueingMechanism)
                     if (!visited.contains(child.getState())) {
                         queue.addOrUpdate(child);
+                    }
+                    else {
+                        System.out.println("visited");
                     }
                 }
             }

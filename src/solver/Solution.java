@@ -5,7 +5,7 @@ import puzzle.Puzzle;
 
 import java.util.List;
 
-public class Solution<T extends Puzzle<T>> {
+public class Solution {
 
     public final List<Action> actions;
     //public final List<Command<T>> commands;

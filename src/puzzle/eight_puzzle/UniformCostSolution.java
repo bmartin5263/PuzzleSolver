@@ -1,24 +1,23 @@
-package eight_puzzle_demo;
+package puzzle.eight_puzzle;
 
-import queues.CompareByHeuristic;
+import queues.CompareByPathCost;
 import queues.PriorityNodeQueue;
 import solver.PuzzleSolver;
 import solver.Solution;
 import solver.SolverBuilder;
 
-public class BestFirstSolution {
+public class UniformCostSolution {
 
     public static void run() {
         PuzzleSolver<EightPuzzle> puzzleSolver;
         Solution s;
 
-        System.out.println("===== Best-First Search =====");
+        System.out.println("===== Uniform Cost =====");
 
             puzzleSolver = new SolverBuilder<EightPuzzle>()
                     .goalState(Constants.GOAL)
                     .initialState(Constants.EASY)
-                    .queueingMechanism(new PriorityNodeQueue<>(new CompareByHeuristic()))
-                    .heuristic(EightPuzzle::incorrectPositionHeuristic)
+                    .queueingMechanism(new PriorityNodeQueue<>(new CompareByPathCost()))
                     .build();
 
         System.out.println("Running Easy...");

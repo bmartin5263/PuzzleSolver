@@ -7,7 +7,6 @@ import java.util.Comparator;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.PriorityQueue;
-import java.util.function.Predicate;
 
 public class PriorityNodeQueue<T extends Puzzle> implements QueueingMechanism<T> {
 
@@ -32,15 +31,12 @@ public class PriorityNodeQueue<T extends Puzzle> implements QueueingMechanism<T>
     public void addOrUpdate(Node<T> newNode) {
         // Is the node's state already in the queue?
         if (states.contains(newNode.getState())) {
+            System.out.println("exists");
             // Remove the node if its path cost is greater than the new one.
-            boolean removedNode = priorityQueue.removeIf(new Predicate<Node<T>>() {
-                 @Override
-                 public boolean test(Node<T> tNode) {
-                     return (newNode.getState().equals(tNode.getState())) && (priorityQueue.comparator().compare(newNode, tNode) < 0);
-                 }
-             });
+            boolean removedNode = priorityQueue.removeIf(tNode -> (newNode.getState().equals(tNode.getState())) && (priorityQueue.comparator().compare(newNode, tNode) < 0));
             // Was a node removed?
             if (removedNode) {
+                System.out.println("rearranged");
                 priorityQueue.add(newNode);
             } else {
                 return;

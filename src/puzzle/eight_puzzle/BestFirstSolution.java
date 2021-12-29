@@ -1,23 +1,24 @@
-package eight_puzzle_demo;
+package puzzle.eight_puzzle;
 
-import queues.BFSQueue;
+import queues.CompareByHeuristic;
+import queues.PriorityNodeQueue;
 import solver.PuzzleSolver;
 import solver.Solution;
 import solver.SolverBuilder;
 
-public class BFSSolution {
+public class BestFirstSolution {
 
     public static void run() {
-
         PuzzleSolver<EightPuzzle> puzzleSolver;
         Solution s;
 
-        System.out.println("===== BFS =====");
+        System.out.println("===== Best-First Search =====");
 
             puzzleSolver = new SolverBuilder<EightPuzzle>()
                     .goalState(Constants.GOAL)
                     .initialState(Constants.EASY)
-                    .queueingMechanism(new BFSQueue<>())
+                    .queueingMechanism(new PriorityNodeQueue<>(new CompareByHeuristic()))
+                    .heuristic(EightPuzzle::incorrectPositionHeuristic)
                     .build();
 
         System.out.println("Running Easy...");

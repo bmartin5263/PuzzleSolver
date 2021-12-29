@@ -1,24 +1,23 @@
-package eight_puzzle_demo;
+package puzzle.eight_puzzle;
 
-import queues.CompareByPathAndHeuristic;
-import queues.PriorityNodeQueue;
+import queues.BFSQueue;
 import solver.PuzzleSolver;
 import solver.Solution;
 import solver.SolverBuilder;
 
-public class AStar2Solution {
+public class BFSSolution {
 
     public static void run() {
+
         PuzzleSolver<EightPuzzle> puzzleSolver;
         Solution s;
 
-        System.out.println("===== A* 2 =====");
+        System.out.println("===== BFS =====");
 
             puzzleSolver = new SolverBuilder<EightPuzzle>()
                     .goalState(Constants.GOAL)
                     .initialState(Constants.EASY)
-                    .queueingMechanism(new PriorityNodeQueue<>(new CompareByPathAndHeuristic()))
-                    .heuristic(EightPuzzle::distanceFromIndexHeuristic)
+                    .queueingMechanism(new BFSQueue<>())
                     .build();
 
         System.out.println("Running Easy...");

@@ -1,4 +1,4 @@
-package eight_puzzle_demo;
+package puzzle.eight_puzzle;
 
 import queues.CompareByPathAndHeuristic;
 import queues.PriorityNodeQueue;
@@ -6,19 +6,19 @@ import solver.PuzzleSolver;
 import solver.Solution;
 import solver.SolverBuilder;
 
-public class AStar1Solution {
+public class AStar2Solution {
 
     public static void run() {
         PuzzleSolver<EightPuzzle> puzzleSolver;
         Solution s;
 
-        System.out.println("===== A* 1 =====");
+        System.out.println("===== A* 2 =====");
 
             puzzleSolver = new SolverBuilder<EightPuzzle>()
                     .goalState(Constants.GOAL)
                     .initialState(Constants.EASY)
                     .queueingMechanism(new PriorityNodeQueue<>(new CompareByPathAndHeuristic()))
-                    .heuristic(EightPuzzle::incorrectPositionHeuristic)
+                    .heuristic(EightPuzzle::distanceFromIndexHeuristic)
                     .build();
 
         System.out.println("Running Easy...");

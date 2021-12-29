@@ -1,30 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="43a9a624-cf0a-4ebc-93f2-55abbcb3e42e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+    <list default="true" id="43a9a624-cf0a-4ebc-93f2-55abbcb3e42e" name="Default" comment="Clean up some of the code">
+      <change afterPath="$PROJECT_DIR$/src/puzzle/lights_out/LightsOut.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/puzzle/lights_out/ToggleCell.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/AStar1Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eight_puzzle_demo/AStar1Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/AStar2Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eight_puzzle_demo/AStar2Solution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/BFSSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eight_puzzle_demo/BFSSolution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/BestFirstSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eight_puzzle_demo/BestFirstSolution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eight_puzzle_demo/Constants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/DFSSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eight_puzzle_demo/DFSSolution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/IterativeDeepeningSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eight_puzzle_demo/IterativeDeepeningSolution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/UniformCostSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eight_puzzle_demo/UniformCostSolution.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/puzzle/Command.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/puzzle/EightPuzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/eight_puzzle_demo/EightPuzzle.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/puzzle/Puzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/puzzle/Puzzle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/AStar1Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/puzzle/eight_puzzle/AStar1Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/AStar2Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/puzzle/eight_puzzle/AStar2Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/BFSSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/puzzle/eight_puzzle/BFSSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/BestFirstSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/puzzle/eight_puzzle/BestFirstSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/puzzle/eight_puzzle/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/DFSSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/puzzle/eight_puzzle/DFSSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/EightPuzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/puzzle/eight_puzzle/EightPuzzle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/IterativeDeepeningSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/puzzle/eight_puzzle/IterativeDeepeningSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/eight_puzzle_demo/UniformCostSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/puzzle/eight_puzzle/UniformCostSolution.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/queues/PriorityNodeQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/queues/PriorityNodeQueue.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/solver/PuzzleSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solver/PuzzleSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/solver/SolverBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solver/SolverBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solver/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/solver/Solution.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -37,7 +43,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -119,8 +125,16 @@
       <option name="presentableId" value="Default" />
       <updated>1555121783063</updated>
       <workItem from="1555121784523" duration="113000" />
-      <workItem from="1640635793779" duration="1220000" />
+      <workItem from="1640635793779" duration="8879000" />
     </task>
+    <task id="LOCAL-00001" summary="Clean up some of the code">
+      <created>1640637220998</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1640637220998</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +150,23 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CHECK_NEW_TODO" value="false" />
+    <MESSAGE value="Clean up some of the code" />
+    <option name="LAST_COMMIT_MESSAGE" value="Clean up some of the code" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/queues/PriorityNodeQueue.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="masterDetails">
     <states>

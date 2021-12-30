@@ -33,7 +33,7 @@ public class PuzzleSolver<T extends Puzzle> {
                 strategy.push(node);
             }
         }
-        System.err.println("Expanded: " + expanded.size());
+        System.err.println("Failed to find solution after expanding " + expanded.size() + " nodes");
         return Optional.empty();
     }
 

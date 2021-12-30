@@ -9,14 +9,30 @@ public class AStarStrategy extends SolveStrategy {
 
     private final TreeSet<Node> queue;
     private final Map<Puzzle, Node> lookup;
+    private final InsertionStrategy insertionStrategy;
 
     public AStarStrategy() {
+        this(new DuplicateChecks());
+    }
+
+    public AStarStrategy(InsertionStrategy insertionStrategy) {
         this.queue = new TreeSet<>(Comparator.comparingLong(Node::getTotalCost));
         this.lookup = new HashMap<>();
+        this.insertionStrategy = insertionStrategy;
     }
 
     @Override
     public void insert(Node node) {
+        insertionStrategy.insert(node, this);
+    }
+
+    public void insertNoDuplicateCheck(Node node) {
+        Puzzle state = node.getState();
+        queue.add(node);
+        lookup.put(state, node);
+    }
+
+    public void insertWithDuplicateCheck(Node node) {
         Puzzle state = node.getState();
         Node insertedNode = lookup.get(state);
         if (insertedNode == null) {

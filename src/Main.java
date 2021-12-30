@@ -1,7 +1,4 @@
-import v2.framework.AStarStrategy;
-import v2.framework.Action;
-import v2.framework.PuzzleSolver;
-import v2.framework.Solution;
+import v2.framework.*;
 import v2.lights_out.LightsOut;
 //import v1.solver.PuzzleSolver;
 //import v1.solver.Solution;
@@ -19,13 +16,13 @@ public class Main {
 //        AStar2Solution.run();
 
         int[][] start = new int[][] {
-                {0, 1, 0},
-                {1, 0, 1},
-                {0, 1, 0}
+                {1, 1, 1},
+                {1, 0, 0},
+                {0, 0, 0}
         };
 
         PuzzleSolver<LightsOut> puzzleSolver = new PuzzleSolver<>(new LightsOut(start));
-        Solution<LightsOut> solution = puzzleSolver.solve(new AStarStrategy()).orElse(null);
+        Solution<LightsOut> solution = puzzleSolver.solve(new AStarStrategy(new NoDuplicateChecks())).orElse(null);
         System.out.println(solution);
         if (solution != null) {
             for (Action<LightsOut> action : solution.getActions()) {

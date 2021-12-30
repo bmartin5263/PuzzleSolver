@@ -32,9 +32,7 @@ public class LightsOut implements Puzzle {
     public LightsOut(int[][] newBoard) {
         for (int[] row : newBoard) {
             for (int v : row) {
-                if (!isValid(v)) {
-                    throw new IllegalArgumentException();
-                }
+                validate(v);
             }
         }
         this.board = newBoard;
@@ -49,15 +47,21 @@ public class LightsOut implements Puzzle {
     }
 
     private boolean isUnchanged(int v) {
+        validate(v);
         return v == ToggleCell.OFF_UNCHANGED || v == ToggleCell.ON_UNCHANGED;
     }
 
     private boolean isOn(int v) {
+        validate(v);
         return v == ToggleCell.ON_UNCHANGED || v == ToggleCell.ON_CHANGED;
     }
 
-    private boolean isValid(int v) {
-        return v == ToggleCell.OFF_UNCHANGED || v == ToggleCell.ON_UNCHANGED || v == ToggleCell.OFF_CHANGED || v == ToggleCell.ON_CHANGED;
+    private void validate(int v) {
+        if (v == ToggleCell.OFF_UNCHANGED || v == ToggleCell.ON_UNCHANGED || v == ToggleCell.OFF_CHANGED || v == ToggleCell.ON_CHANGED) {
+            return;
+        }
+        System.err.println(v);
+        throw new IllegalArgumentException();
     }
 
     @Override

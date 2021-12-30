@@ -1,6 +1,6 @@
-package puzzle.lights_out;
+package v1.puzzle.lights_out;
 
-import puzzle.Action;
+import v1.puzzle.Action;
 
 public class ToggleCell implements Action {
     private final int row;

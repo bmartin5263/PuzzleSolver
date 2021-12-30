@@ -4,16 +4,20 @@ public class Node {
 
     private final Node parent;                    // Node's Parent
     private final Puzzle state;                   // State of the Puzzle
-    private final Action lastAction;              // Last action performed to arrive at this state, nullable
-    private final int depth;                      // Depth of the search space
-    private final int pathCost;                   // Total cost to get to this node
+    private final Action<?> lastAction;              // Last action performed to arrive at this state, nullable
+    private final long depth;                      // Depth of the search space
+    private final long pathCost;                   // Total cost to get to this node
+    private final long heuristicCost;
+    private final long totalCost;
 
-    public Node(Node parent, Puzzle state, Action lastAction, int depth, int pathCost) {
+    public Node(Node parent, Puzzle state, Action<?> lastAction, long depth, long pathCost) {
         this.parent = parent;
         this.state = state;
         this.depth = depth;
         this.pathCost = pathCost;
         this.lastAction = lastAction;
+        this.heuristicCost = state.heuristicCost();
+        this.totalCost = pathCost + heuristicCost;
     }
 
     public static Node forStart(Puzzle start) {
@@ -24,24 +28,26 @@ public class Node {
         return parent;
     }
 
-    public Puzzle getState() {
-        return state;
+    @SuppressWarnings("unchecked")
+    public <T extends Puzzle> T getState() {
+        return (T) state;
     }
 
-    public Action getLastAction() {
-        return lastAction;
+    @SuppressWarnings("unchecked")
+    public <T extends Puzzle> Action<T> getLastAction() {
+        return (Action<T>) lastAction;
     }
 
-    public int getDepth() {
+    public long getDepth() {
         return depth;
     }
 
-    public int getPathCost() {
+    public long getPathCost() {
         return pathCost;
     }
 
-    public int getTotalCost() {
-        return getPathCost() + state.heuristicCost();
+    public long getTotalCost() {
+        return totalCost;
     }
 
 }

@@ -1,9 +1,9 @@
-package puzzle.eight_puzzle;
+package v1.puzzle.eight_puzzle;
 
-import queues.DFSStack;
-import solver.PuzzleSolver;
-import solver.Solution;
-import solver.SolverBuilder;
+import v1.queues.DFSStack;
+import v1.solver.PuzzleSolver;
+import v1.solver.Solution;
+import v1.solver.SolverBuilder;
 
 public class DFSSolution {
 

@@ -1,7 +1,7 @@
-package solver;
+package v1.solver;
 
-import puzzle.Action;
-import puzzle.Puzzle;
+import v1.puzzle.Action;
+import v1.puzzle.Puzzle;
 
 import java.util.List;
 
@@ -43,9 +43,9 @@ public class Solution {
     /**
      * Check the solution to see if it is valid
      */
-    //public void verifyCommands(T puzzle) {
+    //public void verifyCommands(T v1.puzzle) {
     //    T goal = (T)Constants.GOAL;
-    //    T current = puzzle;
+    //    T current = v1.puzzle;
     //    int cost = 0;
     //    System.out.println(current);
     //    for (Command<T> command : commands) {

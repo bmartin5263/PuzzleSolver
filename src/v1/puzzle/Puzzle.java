@@ -1,4 +1,4 @@
-package puzzle;
+package v1.puzzle;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ public interface Puzzle<T extends Puzzle<T>> {
     int getCostOfLastMove();
 
     /*
-     * Must also define a custom hashCode & equals for your puzzle
+     * Must also define a custom hashCode & equals for your v1.puzzle
      */
     int hashCode();
     boolean equals(Object obj);

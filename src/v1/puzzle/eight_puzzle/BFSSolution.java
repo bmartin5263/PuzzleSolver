@@ -1,58 +1,42 @@
-package puzzle.eight_puzzle;
+package v1.puzzle.eight_puzzle;
 
-import queues.DFSStack;
-import solver.PuzzleSolver;
-import solver.Solution;
-import solver.SolverBuilder;
+import v1.queues.BFSQueue;
+import v1.solver.PuzzleSolver;
+import v1.solver.Solution;
+import v1.solver.SolverBuilder;
 
-public class IterativeDeepeningSolution {
+public class BFSSolution {
 
     public static void run() {
 
         PuzzleSolver<EightPuzzle> puzzleSolver;
         Solution s;
-        int i;
 
-        System.out.println("===== Iterative Deepening =====");
+        System.out.println("===== BFS =====");
 
             puzzleSolver = new SolverBuilder<EightPuzzle>()
                     .goalState(Constants.GOAL)
                     .initialState(Constants.EASY)
-                    .queueingMechanism(new DFSStack<>())
+                    .queueingMechanism(new BFSQueue<>())
                     .build();
-
 
         System.out.println("Running Easy...");
 
-            i = 0;
-            s = puzzleSolver.solve(i);
-            while (s == null) {
-                s = puzzleSolver.solve(++i);
-            }
+            s = puzzleSolver.solve(-1);
             s.verify(Constants.EASY, Constants.GOAL);
             System.out.println(s);
 
         System.out.println("Running Medium...");
 
             puzzleSolver.setInitialState(Constants.MEDIUM);
-
-            i = 0;
-            s = puzzleSolver.solve(i);
-            while (s == null) {
-                s = puzzleSolver.solve(++i);
-            }
+            s = puzzleSolver.solve(-1);
             s.verify(Constants.MEDIUM, Constants.GOAL);
             System.out.println(s);
 
         System.out.println("Running Hard...");
 
             puzzleSolver.setInitialState(Constants.HARD);
-
-            i = 0;
-            s = puzzleSolver.solve(i);
-            while (s == null) {
-                s = puzzleSolver.solve(++i);
-            }
+            s = puzzleSolver.solve(-1);
             s.verify(Constants.HARD, Constants.GOAL);
             System.out.println(s);
     }

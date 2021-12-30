@@ -1,7 +1,7 @@
-package solver;
+package v1.solver;
 
-import puzzle.Puzzle;
-import queues.QueueingMechanism;
+import v1.puzzle.Puzzle;
+import v1.queues.QueueingMechanism;
 
 import java.util.Objects;
 import java.util.function.BiFunction;
@@ -38,7 +38,7 @@ public class SolverBuilder<T extends Puzzle<T>> {
             throw new IllegalArgumentException();
         }
         return new PuzzleSolver<>(
-                Objects.requireNonNull(initialState, "You must provide an initial state of the puzzle to start at"),
+                Objects.requireNonNull(initialState, "You must provide an initial state of the v1.puzzle to start at"),
                 Objects.requireNonNull(goalState, "You must provide a goal state to build towards"),
                 Objects.requireNonNull(queueingMechanism, "You must provide a Queue to order the nodes"),
                 Objects.requireNonNull(heuristic)

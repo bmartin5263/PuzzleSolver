@@ -1,7 +1,7 @@
-package solver;
+package v1.solver;
 
-import puzzle.Action;
-import puzzle.Puzzle;
+import v1.puzzle.Action;
+import v1.puzzle.Puzzle;
 
 public class Node<T extends Puzzle> {
 

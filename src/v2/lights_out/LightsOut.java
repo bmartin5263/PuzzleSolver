@@ -9,36 +9,55 @@ import java.util.List;
 
 public class LightsOut implements Puzzle {
 
-    private final boolean[][] board;
+    private final int[][] board;
 
     public LightsOut(int n) {
-        this.board = new boolean[n][n];
+        this.board = new int[n][n];
         for (int i = 0; i < board.length; ++i) {
             for (int j = 0; j < board[0].length; ++j) {
-                this.board[i][j] = true;
+                this.board[i][j] = 1;
             }
         }
     }
 
-    public LightsOut(int[][] arr) {
-        this.board = new boolean[arr.length][arr[0].length];
-        for (int i = 0; i < board.length; ++i) {
-            for (int j = 0; j < board[0].length; ++j) {
-                this.board[i][j] = arr[i][j] == 1;
+//    public LightsOut(int[][] arr) {
+//        this.board = new int[arr.length][arr[0].length];
+//        for (int i = 0; i < board.length; ++i) {
+//            for (int j = 0; j < board[0].length; ++j) {
+//                this.board[i][j] = arr[i][j];
+//            }
+//        }
+//    }
+
+    public LightsOut(int[][] newBoard) {
+        for (int[] row : newBoard) {
+            for (int v : row) {
+                if (!isValid(v)) {
+                    throw new IllegalArgumentException();
+                }
             }
         }
-    }
-
-    public LightsOut(boolean[][] newBoard) {
         this.board = newBoard;
     }
 
-    public boolean[][] copyBoard() {
-        boolean[][] newBoard = new boolean[board.length][board[0].length];
+    public int[][] copyBoard() {
+        int[][] newBoard = new int[board.length][board[0].length];
         for (int i = 0; i < board.length; ++i) {
             System.arraycopy(board[i], 0, newBoard[i], 0, board[0].length);
         }
         return newBoard;
+    }
+
+    private boolean isUnchanged(int v) {
+        return v == ToggleCell.OFF_UNCHANGED || v == ToggleCell.ON_UNCHANGED;
+    }
+
+    private boolean isOn(int v) {
+        return v == ToggleCell.ON_UNCHANGED || v == ToggleCell.ON_CHANGED;
+    }
+
+    private boolean isValid(int v) {
+        return v == ToggleCell.OFF_UNCHANGED || v == ToggleCell.ON_UNCHANGED || v == ToggleCell.OFF_CHANGED || v == ToggleCell.ON_CHANGED;
     }
 
     @Override
@@ -46,7 +65,9 @@ public class LightsOut implements Puzzle {
         List<ToggleCell> actions = new ArrayList<>();
         for (int i = 0; i < board.length; ++i) {
             for (int j = 0; j < board[0].length; ++j) {
-                if (this.board[i][j]) {
+                int v = board[i][j];
+                // Only add lights that haven't been changed
+                if (isUnchanged(v)) {
                     actions.add(new ToggleCell(i, j));
                 }
             }
@@ -55,22 +76,26 @@ public class LightsOut implements Puzzle {
     }
 
     @Override
-    public int heuristicCost() {
+    public long heuristicCost() {
         // Calculate number of lights still on
-        int score = 0;
-        for (boolean[] booleans : board) {
+        long lightsRemaining = 0;
+        for (int[] lights : board) {
             for (int j = 0; j < board[0].length; ++j) {
-                if (booleans[j]) score++;
+                int v = lights[j];
+                if (isOn(v)) {
+                    lightsRemaining++;
+                }
             }
         }
-        return score;
+        return lightsRemaining;
     }
 
     @Override
     public boolean isGoal() {
-        for (boolean[] lights : board) {
+        for (int[] lights : board) {
             for (int j = 0; j < board[0].length; ++j) {
-                if (lights[j]) {
+                int v = lights[j];
+                if (isOn(v)) {
                     return false;
                 }
             }
@@ -88,6 +113,6 @@ public class LightsOut implements Puzzle {
 
     @Override
     public int hashCode() {
-        return Arrays.hashCode(board);
+        return Arrays.deepHashCode(board);
     }
 }

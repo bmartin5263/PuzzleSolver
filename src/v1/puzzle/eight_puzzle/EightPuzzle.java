@@ -1,7 +1,7 @@
-package puzzle.eight_puzzle;
+package v1.puzzle.eight_puzzle;
 
-import puzzle.Action;
-import puzzle.Puzzle;
+import v1.puzzle.Action;
+import v1.puzzle.Puzzle;
 
 import java.util.*;
 

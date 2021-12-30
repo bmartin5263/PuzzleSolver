@@ -1,22 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="43a9a624-cf0a-4ebc-93f2-55abbcb3e42e" name="Default" comment="Add lights out demo">
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/AStarStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/Action.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/BfsStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/DfsStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/Node.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/Puzzle.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/PuzzleSolver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/Solution.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/SolveStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/lights_out/LightsOut.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/lights_out/ToggleCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/Puzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/Puzzle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/eight_puzzle/AStar1Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/eight_puzzle/AStar1Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/eight_puzzle/AStar2Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/eight_puzzle/AStar2Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/eight_puzzle/BFSSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/eight_puzzle/BFSSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/eight_puzzle/BestFirstSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/eight_puzzle/BestFirstSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/eight_puzzle/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/eight_puzzle/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/eight_puzzle/DFSSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/eight_puzzle/DFSSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/eight_puzzle/EightPuzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/eight_puzzle/EightPuzzle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/eight_puzzle/IterativeDeepeningSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/eight_puzzle/IterativeDeepeningSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/eight_puzzle/UniformCostSolution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/eight_puzzle/UniformCostSolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/lights_out/LightsOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/lights_out/LightsOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/puzzle/lights_out/ToggleCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/puzzle/lights_out/ToggleCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/queues/BFSQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/queues/BFSQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/queues/CompareByHeuristic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/queues/CompareByHeuristic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/queues/CompareByPathAndHeuristic.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/queues/CompareByPathAndHeuristic.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/queues/CompareByPathCost.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/queues/CompareByPathCost.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/queues/DFSStack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/queues/DFSStack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/queues/PriorityNodeQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/queues/PriorityNodeQueue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/queues/QueueingMechanism.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/queues/QueueingMechanism.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solver/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/solver/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solver/PuzzleSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/solver/PuzzleSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solver/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/solver/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/solver/SolverBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v1/solver/SolverBuilder.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/AStarStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/AStarStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/BfsStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/BfsStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/DfsStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/DfsStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/Node.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/Puzzle.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/Puzzle.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/PuzzleSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/PuzzleSolver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/Solution.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/Solution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/SolveStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/SolveStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/lights_out/LightsOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/lights_out/LightsOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/lights_out/ToggleCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/lights_out/ToggleCell.java" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +63,9 @@
   </component>
   <component name="ProjectId" id="22sojfwgHy52e3XQbvv7UBmJjla" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="showLibraryContents" value="true" />
+  </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -53,18 +84,6 @@
       <recent name="$PROJECT_DIR$/src/v2/framework" />
       <recent name="$PROJECT_DIR$/src" />
     </key>
-  </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
   </component>
   <component name="RunManager">
     <configuration default="true" type="Applet">
@@ -118,6 +137,7 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -161,6 +181,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CHECK_NEW_TODO" value="false" />
@@ -173,9 +194,14 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/queues/PriorityNodeQueue.java</url>
+          <url>file://$PROJECT_DIR$/src/v1/queues/PriorityNodeQueue.java</url>
           <line>37</line>
           <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/v2/lights_out/ToggleCell.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

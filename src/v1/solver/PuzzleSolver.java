@@ -1,8 +1,8 @@
-package solver;
+package v1.solver;
 
-import puzzle.Action;
-import puzzle.Puzzle;
-import queues.QueueingMechanism;
+import v1.puzzle.Action;
+import v1.puzzle.Puzzle;
+import v1.queues.QueueingMechanism;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.function.BiFunction;
 
 /**
- * PuzzleSolver is a general purpose single-agent puzzle solver that can be used to solve objects
+ * PuzzleSolver is a general purpose single-agent v1.puzzle v1.solver that can be used to solve objects
  * that implement "Puzzle". PuzzleSolver takes in an initial state, a goal state, a successor function, and a
  * queue. The successor function will determine the path costs and children for a given state while the
  * queue will keep track of search ordering.
@@ -64,7 +64,7 @@ public class PuzzleSolver<T extends Puzzle<T>> {
     }
 
     /**
-     * Solve the puzzle. Optional argument maxDepth can limit the depth of the search (for Iterative Deepening),
+     * Solve the v1.puzzle. Optional argument maxDepth can limit the depth of the search (for Iterative Deepening),
      * but can be set to '-1' to ignore.
      */
     public Solution solve(int maxDepth) {

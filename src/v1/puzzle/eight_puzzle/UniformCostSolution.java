@@ -1,24 +1,23 @@
-package puzzle.eight_puzzle;
+package v1.puzzle.eight_puzzle;
 
-import queues.CompareByPathAndHeuristic;
-import queues.PriorityNodeQueue;
-import solver.PuzzleSolver;
-import solver.Solution;
-import solver.SolverBuilder;
+import v1.queues.CompareByPathCost;
+import v1.queues.PriorityNodeQueue;
+import v1.solver.PuzzleSolver;
+import v1.solver.Solution;
+import v1.solver.SolverBuilder;
 
-public class AStar1Solution {
+public class UniformCostSolution {
 
     public static void run() {
         PuzzleSolver<EightPuzzle> puzzleSolver;
         Solution s;
 
-        System.out.println("===== A* 1 =====");
+        System.out.println("===== Uniform Cost =====");
 
             puzzleSolver = new SolverBuilder<EightPuzzle>()
                     .goalState(Constants.GOAL)
                     .initialState(Constants.EASY)
-                    .queueingMechanism(new PriorityNodeQueue<>(new CompareByPathAndHeuristic()))
-                    .heuristic(EightPuzzle::incorrectPositionHeuristic)
+                    .queueingMechanism(new PriorityNodeQueue<>(new CompareByPathCost()))
                     .build();
 
         System.out.println("Running Easy...");

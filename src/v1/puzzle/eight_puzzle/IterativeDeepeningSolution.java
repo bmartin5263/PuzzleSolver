@@ -1,43 +1,58 @@
-package puzzle.eight_puzzle;
+package v1.puzzle.eight_puzzle;
 
-import queues.CompareByHeuristic;
-import queues.PriorityNodeQueue;
-import solver.PuzzleSolver;
-import solver.Solution;
-import solver.SolverBuilder;
+import v1.queues.DFSStack;
+import v1.solver.PuzzleSolver;
+import v1.solver.Solution;
+import v1.solver.SolverBuilder;
 
-public class BestFirstSolution {
+public class IterativeDeepeningSolution {
 
     public static void run() {
+
         PuzzleSolver<EightPuzzle> puzzleSolver;
         Solution s;
+        int i;
 
-        System.out.println("===== Best-First Search =====");
+        System.out.println("===== Iterative Deepening =====");
 
             puzzleSolver = new SolverBuilder<EightPuzzle>()
                     .goalState(Constants.GOAL)
                     .initialState(Constants.EASY)
-                    .queueingMechanism(new PriorityNodeQueue<>(new CompareByHeuristic()))
-                    .heuristic(EightPuzzle::incorrectPositionHeuristic)
+                    .queueingMechanism(new DFSStack<>())
                     .build();
+
 
         System.out.println("Running Easy...");
 
-            s = puzzleSolver.solve(-1);
+            i = 0;
+            s = puzzleSolver.solve(i);
+            while (s == null) {
+                s = puzzleSolver.solve(++i);
+            }
             s.verify(Constants.EASY, Constants.GOAL);
             System.out.println(s);
 
         System.out.println("Running Medium...");
 
             puzzleSolver.setInitialState(Constants.MEDIUM);
-            s = puzzleSolver.solve(-1);
+
+            i = 0;
+            s = puzzleSolver.solve(i);
+            while (s == null) {
+                s = puzzleSolver.solve(++i);
+            }
             s.verify(Constants.MEDIUM, Constants.GOAL);
             System.out.println(s);
 
         System.out.println("Running Hard...");
 
             puzzleSolver.setInitialState(Constants.HARD);
-            s = puzzleSolver.solve(-1);
+
+            i = 0;
+            s = puzzleSolver.solve(i);
+            while (s == null) {
+                s = puzzleSolver.solve(++i);
+            }
             s.verify(Constants.HARD, Constants.GOAL);
             System.out.println(s);
     }

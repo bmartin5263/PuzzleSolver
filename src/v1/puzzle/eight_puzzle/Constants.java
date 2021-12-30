@@ -1,4 +1,4 @@
-package puzzle.eight_puzzle;
+package v1.puzzle.eight_puzzle;
 
 public class Constants {
 

@@ -1,62 +1,70 @@
 package v2.framework;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
-public class PuzzleSolver {
+public class PuzzleSolver<T extends Puzzle> {
 
-    private final Puzzle start;
+    private final T start;
 
-    private Set<Puzzle> expanded;
-    private SolveStrategy strategy;
+    private Set<T> expanded;
 
-    public <T extends Puzzle> PuzzleSolver(T start) {
+    public PuzzleSolver(T start) {
         this.start = start;
         this.expanded = null;
-        this.strategy = null;
     }
 
-    public Solution solve(SolveStrategy strategy) {
-        this.strategy = strategy;
+    public Optional<Solution<T>> solve(SolveStrategy strategy) {
+        long tick = System.currentTimeMillis();
         this.expanded = new HashSet<>();
 
         strategy.push(Node.forStart(start));
         while (strategy.shouldContinueSearching()) {
             Node next = strategy.pop();
-            Puzzle state = next.getState();
+            T state = next.getState();
 
             if (state.isGoal()) {
-                return new Solution();
+                long tock = System.currentTimeMillis();
+                long time = tock - tick;
+                return Optional.of(new Solution<>(listActions(next), next.getPathCost(), next.getDepth(), strategy.getMostQueuedNodes(), strategy.getNumOperations(), time));
             }
             expanded.add(state);
-            List<Node> children = successorFunction(next);
-            for (Node node : children) {
-                if (!expanded.contains(node.getState())) {
-                    strategy.push(node);
-                }
+            List<Node> neighbors = findNeighbors(next);
+            for (Node node : neighbors) {
+                strategy.push(node);
             }
         }
-        return null;
+        System.err.println("Expanded: " + expanded.size());
+        return Optional.empty();
     }
 
-    private List<Node> successorFunction(Node parent) {
-        List<Node> children = new ArrayList<>();
-        Puzzle state = parent.getState();
-        for (Action<? extends Puzzle> action : state.getActions()) {
-            Action<Puzzle> casted = (Action<Puzzle>) action;
-            Puzzle nextState = casted.execute(state);
+    @SuppressWarnings("unchecked")
+    private List<Node> findNeighbors(Node current) {
+        List<Node> neighbors = new ArrayList<>();
+        T state = current.getState();
+        List<Action<T>> actions = (List<Action<T>>) state.getActions();
+        for (Action<T> action : actions) {
+            T nextState = action.execute(state);
             if (!expanded.contains(nextState)) {
-                children.add(new Node(
-                        parent,
+                neighbors.add(new Node(
+                        current,
                         nextState,
                         action,
-                        parent.getDepth() + 1,
-                        parent.getPathCost() + action.cost()
+                        current.getDepth() + 1,
+                        current.getPathCost() + action.cost()
                 ));
             }
         }
-        return children;
+        return neighbors;
+    }
+
+    private List<Action<T>> listActions(Node goal) {
+        List<Action<T>> actions = new ArrayList<>((int) goal.getDepth());
+        Node current = goal;
+        while (current.getLastAction() != null) {
+            actions.add(current.getLastAction());
+            current = current.getParent();
+        }
+        Collections.reverse(actions);
+        return actions;
     }
 }

@@ -1,6 +1,6 @@
-package queues;
+package v1.queues;
 
-import solver.Node;
+import v1.solver.Node;
 
 import java.util.Comparator;
 

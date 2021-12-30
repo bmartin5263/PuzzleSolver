@@ -1,7 +1,7 @@
-package queues;
+package v1.queues;
 
-import puzzle.Puzzle;
-import solver.Node;
+import v1.puzzle.Puzzle;
+import v1.solver.Node;
 
 /**
  * Abstract representation of a collection of nodes where you can addOrUpdate and remove from in only a single

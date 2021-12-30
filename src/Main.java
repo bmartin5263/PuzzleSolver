@@ -1,10 +1,11 @@
-import v2.framework.DfsStrategy;
+import v2.framework.AStarStrategy;
+import v2.framework.Action;
 import v2.framework.PuzzleSolver;
 import v2.framework.Solution;
 import v2.lights_out.LightsOut;
-//import solver.PuzzleSolver;
-//import solver.Solution;
-//import solver.SolverBuilder;
+//import v1.solver.PuzzleSolver;
+//import v1.solver.Solution;
+//import v1.solver.SolverBuilder;
 
 public class Main {
 
@@ -18,14 +19,18 @@ public class Main {
 //        AStar2Solution.run();
 
         int[][] start = new int[][] {
-                {1, 1, 0},
-                {1, 0, 0},
+                {0, 1, 0},
+                {1, 0, 1},
                 {0, 1, 0}
         };
 
-        PuzzleSolver puzzleSolver = new PuzzleSolver(new LightsOut(start));
-        Solution solution = puzzleSolver.solve(new DfsStrategy());
+        PuzzleSolver<LightsOut> puzzleSolver = new PuzzleSolver<>(new LightsOut(start));
+        Solution<LightsOut> solution = puzzleSolver.solve(new AStarStrategy()).orElse(null);
         System.out.println(solution);
+        if (solution != null) {
+            for (Action<LightsOut> action : solution.getActions()) {
+                System.out.println(action);
+            }
+        }
     }
-
 }

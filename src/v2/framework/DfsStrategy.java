@@ -3,7 +3,7 @@ package v2.framework;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class DfsStrategy implements SolveStrategy {
+public class DfsStrategy extends SolveStrategy {
 
     private final Deque<Node> stack;
     private final int maxDepth;
@@ -19,7 +19,7 @@ public class DfsStrategy implements SolveStrategy {
     }
 
     @Override
-    public void push(Node node) {
+    public void insert(Node node) {
         if (maxDepth != -1) {
             if (node.getDepth() <= maxDepth) {
                 this.stack.push(node);
@@ -36,7 +36,12 @@ public class DfsStrategy implements SolveStrategy {
     }
 
     @Override
-    public Node pop() {
+    long size() {
+        return stack.size();
+    }
+
+    @Override
+    public Node next() {
         return stack.pop();
     }
 }

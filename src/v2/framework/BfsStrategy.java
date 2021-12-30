@@ -3,16 +3,16 @@ package v2.framework;
 import java.util.ArrayDeque;
 import java.util.Deque;
 
-public class BfsStrategy implements SolveStrategy {
+public class BfsStrategy extends SolveStrategy {
 
-    private Deque<Node> queue;
+    private final Deque<Node> queue;
 
     public BfsStrategy() {
         this.queue = new ArrayDeque<>();
     }
 
     @Override
-    public void push(Node node) {
+    public void insert(Node node) {
         this.queue.add(node);
     }
 
@@ -22,7 +22,12 @@ public class BfsStrategy implements SolveStrategy {
     }
 
     @Override
-    public Node pop() {
+    public Node next() {
         return queue.remove();
+    }
+
+    @Override
+    long size() {
+        return queue.size();
     }
 }

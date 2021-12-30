@@ -1,7 +1,7 @@
-package puzzle.lights_out;
+package v1.puzzle.lights_out;
 
-import puzzle.Action;
-import puzzle.Puzzle;
+import v1.puzzle.Action;
+import v1.puzzle.Puzzle;
 
 import java.util.ArrayList;
 import java.util.Arrays;

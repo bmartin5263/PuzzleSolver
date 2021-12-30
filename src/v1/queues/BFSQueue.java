@@ -1,7 +1,7 @@
-package queues;
+package v1.queues;
 
-import puzzle.Puzzle;
-import solver.Node;
+import v1.puzzle.Puzzle;
+import v1.solver.Node;
 
 import java.util.ArrayDeque;
 import java.util.Queue;

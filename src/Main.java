@@ -1,5 +1,5 @@
+import v2.eight_puzzle.EightPuzzle;
 import v2.framework.*;
-import v2.lights_out.LightsOut;
 //import v1.solver.PuzzleSolver;
 //import v1.solver.Solution;
 //import v1.solver.SolverBuilder;
@@ -15,17 +15,17 @@ public class Main {
 //        AStar1Solution.run();
 //        AStar2Solution.run();
 
-        int[][] start = new int[][] {
-                {1, 1, 1},
-                {1, 0, 0},
-                {0, 0, 0}
+        int[] start = new int[] {
+                1, 2, 3,
+                7, 4, 6,
+                5, 8, 0
         };
 
-        PuzzleSolver<LightsOut> puzzleSolver = new PuzzleSolver<>(new LightsOut(start));
-        Solution<LightsOut> solution = puzzleSolver.solve(new AStarStrategy(new NoDuplicateChecks())).orElse(null);
+        PuzzleSolver<EightPuzzle> puzzleSolver = new PuzzleSolver<>(new EightPuzzle(start));
+        Solution<EightPuzzle> solution = puzzleSolver.solve(new GreedyStrategy(new NoDuplicateChecks())).orElse(null);
         System.out.println(solution);
         if (solution != null) {
-            for (Action<LightsOut> action : solution.getActions()) {
+            for (Action<EightPuzzle> action : solution.getActions()) {
                 System.out.println(action);
             }
         }

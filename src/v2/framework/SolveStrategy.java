@@ -1,6 +1,6 @@
 package v2.framework;
 
-public abstract class SolveStrategy {
+abstract class SolveStrategy {
 
     private long operations = 0;
     private long mostQueuedNodes = 0;
@@ -14,7 +14,7 @@ public abstract class SolveStrategy {
         return next();
     }
 
-    public abstract boolean shouldContinueSearching();
+    public abstract boolean isSearching();
     abstract void insert(Node node);
     abstract Node next();
     abstract long size();

@@ -18,7 +18,7 @@ public class PuzzleSolver<T extends Puzzle> {
         this.expanded = new HashSet<>();
 
         strategy.push(Node.forStart(start));
-        while (strategy.shouldContinueSearching()) {
+        while (strategy.isSearching()) {
             Node next = strategy.pop();
             T state = next.getState();
 
@@ -50,7 +50,7 @@ public class PuzzleSolver<T extends Puzzle> {
                         nextState,
                         action,
                         current.getDepth() + 1,
-                        current.getPathCost() + action.cost()
+                        current.getPathCost() + action.cost(state)
                 ));
             }
         }

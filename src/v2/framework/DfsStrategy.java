@@ -31,7 +31,7 @@ public class DfsStrategy extends SolveStrategy {
     }
 
     @Override
-    public boolean shouldContinueSearching() {
+    public boolean isSearching() {
         return !stack.isEmpty();
     }
 

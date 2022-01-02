@@ -54,7 +54,7 @@ public class ToggleCell implements Action<LightsOut> {
     }
 
     @Override
-    public int cost() {
+    public long cost(LightsOut inState) {
         return 1;
     }
 

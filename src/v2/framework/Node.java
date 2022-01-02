@@ -2,13 +2,12 @@ package v2.framework;
 
 public class Node {
 
-    private final Node parent;                    // Node's Parent
-    private final Puzzle state;                   // State of the Puzzle
-    private final Action<?> lastAction;              // Last action performed to arrive at this state, nullable
-    private final long depth;                      // Depth of the search space
-    private final long pathCost;                   // Total cost to get to this node
+    private final Node parent;
+    private final Puzzle state;
+    private final Action<?> lastAction;
+    private final long depth;
+    private final long pathCost;
     private final long heuristicCost;
-    private final long totalCost;
 
     public Node(Node parent, Puzzle state, Action<?> lastAction, long depth, long pathCost) {
         this.parent = parent;
@@ -17,7 +16,6 @@ public class Node {
         this.pathCost = pathCost;
         this.lastAction = lastAction;
         this.heuristicCost = state.heuristicCost();
-        this.totalCost = pathCost + heuristicCost;
     }
 
     public static Node forStart(Puzzle start) {
@@ -47,7 +45,10 @@ public class Node {
     }
 
     public long getTotalCost() {
-        return totalCost;
+        return getHeuristicCost() + getPathCost();
     }
 
+    public long getHeuristicCost() {
+        return heuristicCost;
+    }
 }

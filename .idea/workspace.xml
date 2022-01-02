@@ -4,15 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="43a9a624-cf0a-4ebc-93f2-55abbcb3e42e" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/DuplicateChecks.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/InsertionStrategy.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/v2/framework/NoDuplicateChecks.java" afterDir="false" />
+    <list default="true" id="43a9a624-cf0a-4ebc-93f2-55abbcb3e42e" name="Default" comment="allow AStar to be configured without duplicate state checks">
+      <change afterPath="$PROJECT_DIR$/src/v2/eight_puzzle/EightPuzzle.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/v2/eight_puzzle/MoveSquare.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/v2/framework/GreedyStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/v2/framework/PriorityStrategy.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/v2/framework/UniformCostStrategy.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/v2/framework/AStarStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/AStarStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/Action.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/Action.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/BfsStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/BfsStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/DfsStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/DfsStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/DuplicateChecks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/DuplicateChecks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/InsertionStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/InsertionStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/NoDuplicateChecks.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/NoDuplicateChecks.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/Node.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/v2/framework/PuzzleSolver.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/PuzzleSolver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/v2/lights_out/LightsOut.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/lights_out/LightsOut.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/framework/SolveStrategy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/framework/SolveStrategy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/v2/lights_out/ToggleCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/v2/lights_out/ToggleCell.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,6 +40,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="22sojfwgHy52e3XQbvv7UBmJjla" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -42,16 +60,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/v2/framework" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="settings.github" />
+    <property name="settings.editor.selected.configurable" value="org.jetbrains.plugins.github.ui.GithubSettingsConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyClassDialog.RECENTS_KEY">
+    <key name="CreateClassDialog.RecentsKey">
       <recent name="v2.framework" />
-      <recent name="v2.lights_out" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/v2/framework" />
       <recent name="$PROJECT_DIR$/src" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="v2.framework" />
+      <recent name="v2.lights_out" />
     </key>
   </component>
   <component name="RunManager">
@@ -141,7 +162,14 @@
       <option name="project" value="LOCAL" />
       <updated>1640844958213</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="allow AStar to be configured without duplicate state checks">
+      <created>1640899392522</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1640899392522</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -164,7 +192,8 @@
     <MESSAGE value="Clean up some of the code" />
     <MESSAGE value="Add lights out demo" />
     <MESSAGE value="rewrote board implementation for lights out" />
-    <option name="LAST_COMMIT_MESSAGE" value="rewrote board implementation for lights out" />
+    <MESSAGE value="allow AStar to be configured without duplicate state checks" />
+    <option name="LAST_COMMIT_MESSAGE" value="allow AStar to be configured without duplicate state checks" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -179,6 +208,11 @@
           <url>file://$PROJECT_DIR$/src/v2/lights_out/ToggleCell.java</url>
           <line>44</line>
           <option name="timeStamp" value="30" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/v2/framework/PuzzleSolver.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="31" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -17,7 +17,7 @@ public class BfsStrategy extends SolveStrategy {
     }
 
     @Override
-    public boolean shouldContinueSearching() {
+    public boolean isSearching() {
         return !queue.isEmpty();
     }
 
